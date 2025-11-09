@@ -1,4 +1,3 @@
-import Navigatebar from "@/../components/Navigatebar";
 import HeroSection from "@/../components/HeroSection";
 import HowItWorks from "@/../components/HowItWorks";
 import Portfolio from "@/../components/Portfolio";
@@ -10,7 +9,6 @@ import Footer from "@/../components/Footer";
 export default function Home() {
   return (
     <main className="bg-black text-white font-sans overflow-x-hidden">
-      <Navigatebar />
       <HeroSection />
       <HowItWorks />
       <Portfolio />
