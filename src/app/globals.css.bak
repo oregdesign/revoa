@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  --gradient-title-margin: 40px;
+  --gradient-padding: 120px;
+  --section-gap: 24px;
+  --section-skew-Y: -12deg;
+  --section-angle-sin: 0.212;
+  --transform-origin-x: calc(var(--section-gap) * 0.8);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Custom Gradient Canvas */
+#gradient-canvas {
+  width: 100%;
+  height: 75%;
+  --gradient-color-1: #6ec3f4;
+  --gradient-color-2: #3a3aff;
+  --gradient-color-3: #ff61ab;
+  --gradient-color-4: #E63946;
+}
+
+/* Title */
+.section-title-1 {
+  font-size: 64px;
+  font-weight: 700;
+  width: 500px;
+  max-width: 80vw;
+}
+
+@media (min-width: 450px) {
+  .section-title-1 {
+    font-size: 70px;
+  }
+}
+
+@media (min-width: 768px) {
+  .section-title-1 {
+    font-size: 90px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-title-1 {
+    font-size: 100px;
+    width: 600px;
+  }
+
+  #gradient-canvas {
+  width: 100%;
+  height: 75%;
+  --gradient-color-1: #6ec3f4;
+  --gradient-color-2: #3a3aff;
+  --gradient-color-3: #ff61ab;
+  --gradient-color-4: #E63946;
+}
+}
+
+/* Text layering */
+.text {
+  line-height: 1;
+  margin: var(--gradient-title-margin) 0 0 0;
+  letter-spacing: 2px;
+  min-height: 200px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: left;
+  position: relative;
+}
+
+.text-above {
+  color: var(--font-color, #3a3a3a);
+  position: relative;
+  z-index: 3;
+}
+
+.text-under {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.text-under-blended {
+  color: #3a3a3a;
+  mix-blend-mode: color-burn;
+  padding: 0px;
+}
+
+.text-under-overlay {
+  opacity: .5;
+  color: #3a3a3a;
+  padding: 0px;
+  mix-blend-mode: color-burn;
+}
+
+/* Subtitle */
+.section-title-2.subtitle {
+  font-size: 20px;
+  font-weight: 400;
+  opacity: 0.9;
+  line-height: 1.4;
+  max-width: 600px;
+}

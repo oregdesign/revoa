@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -31,9 +32,10 @@ export default function Navbar() {
         <Link href="/" className="text-2xl font-bold text-white tracking-tight">
           Revoa
         </Link>
+        
 
         {/* Desktop Links */}
-        <div className="hidden md:flex gap-8 items-center text-gray-200">
+        <div className="hidden md:flex gap-8 items-center text-gray-200 font-bold">
           {links.map((link, i) => (
             <a
               key={i}
@@ -49,6 +51,7 @@ export default function Navbar() {
           >
             Chat Now
           </a>
+          <LanguageSwitcher />
         </div>
 
         {/* Mobile Menu Button */}
@@ -56,7 +59,7 @@ export default function Navbar() {
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden text-gray-200 hover:text-white transition"
         >
-          {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {menuOpen ? <X className="w-6 h-6 font-bold" /> : <Menu className="w-6 h-6 font-bold" />}
         </button>
       </div>
 

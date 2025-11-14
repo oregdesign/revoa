@@ -1,3 +1,19 @@
+window.addEventListener("DOMContentLoaded", () => {
+  const heroTitle = document.querySelector(".hero-title");
+  if (!heroTitle) return;
+
+  const heroTitleOverlay = heroTitle.querySelector(".hero-title__overlay");
+  if (!heroTitleOverlay) return;
+
+  // Get only the visible text nodes, ignoring the overlay itself
+  const textOnly = Array.from(heroTitle.childNodes)
+    .filter(node => node.nodeType === Node.TEXT_NODE || node.nodeName === "BR")
+    .map(node => node.textContent)
+    .join("");
+
+  heroTitleOverlay.innerText = textOnly.trim();
+});
+
 
 /*
 *   Stripe WebGl Gradient Animation by Stripe.com
@@ -499,13 +515,11 @@ function normalizeColor(hexCode) {
         }).filter(Boolean).map(normalizeColor)
     }
   }
-
+  
   // Expose to global scope for React/Next to use
 if (typeof window !== "undefined" && window.Gradient === undefined) {
   window.Gradient = Gradient;
 }
-
-  
   
   
   
